@@ -1,0 +1,10 @@
+timestamp,average percentage,lower bound percentage,upper bound percentage,baseline percentage,standard deviation percentage,data source
+2026-02-01T00:00:00Z,96.0,94.2,97.3,95.8,1.0,Charge 6
+2026-02-05T00:00:00Z,95.9,92.8,97.9,95.9,0.9,Charge 6
+2026-02-15T00:00:00Z,96.1,92.5,98.1,95.9,0.9,Charge 6
+2026-02-16T00:00:00Z,95.1,92.1,96.9,95.9,0.9,Charge 6
+2026-02-17T00:00:00Z,98.7,98.3,99.5,96.0,1.1,Charge 6
+2026-02-18T00:00:00Z,96.6,95.4,97.6,96.1,1.0,Charge 6
+2026-02-19T00:00:00Z,95.5,94.3,96.9,96.1,1.0,Charge 6
+2026-02-20T00:00:00Z,96.0,95.1,96.7,96.1,1.0,Charge 6
+2026-02-21T00:00:00Z,97.5,95.2,99.4,96.2,1.0,Charge 6

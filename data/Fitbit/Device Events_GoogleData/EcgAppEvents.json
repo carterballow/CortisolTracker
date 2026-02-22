@@ -1,0 +1,65 @@
+[
+  {
+    "event": {
+      "buttonPressed": {
+        "button": "ecg-start"
+      },
+      "funcAddr": 348254985,
+      "lineNo": 1181
+    },
+    "timestamp": "2026-01-08T07:17:38.28Z"
+  },
+  {
+    "event": {
+      "funcAddr": 348253465,
+      "lineNo": 417,
+      "viewChanged": {
+        "newView": "./ecg_reading_collected.view"
+      }
+    },
+    "timestamp": "2026-01-08T07:17:38.28Z"
+  },
+  {
+    "event": {
+      "funcAddr": 348108885,
+      "heapInfo": {
+        "arena": 1009736,
+        "inUse": 642340
+      },
+      "lineNo": 2221
+    },
+    "timestamp": "2026-01-08T07:17:38.353Z"
+  },
+  {
+    "event": {
+      "error": {
+        "lr": 1303251,
+        "pc": 348107896,
+        "reason": 0
+      },
+      "funcAddr": 348107601,
+      "lineNo": 2155
+    },
+    "timestamp": "2026-01-08T07:17:38.726Z"
+  },
+  {
+    "event": {
+      "funcAddr": 348253465,
+      "lineNo": 417,
+      "viewChanged": {
+        "newView": "./ecg_phone_setup.view"
+      }
+    },
+    "timestamp": "2026-01-08T07:17:38.736Z"
+  },
+  {
+    "event": {
+      "funcAddr": 348253465,
+      "lineNo": 417,
+      "viewChanged": {
+        "newView": "./ecg_phone_setup.view"
+      }
+    },
+    "timestamp": "2026-01-08T07:17:39.072Z"
+  }
+]

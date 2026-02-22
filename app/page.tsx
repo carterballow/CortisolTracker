@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Activity } from "lucide-react"
 import { BottomNav, type TabId } from "@/components/bottom-nav"
 import { HomeTab } from "@/components/home-tab"
@@ -8,11 +8,24 @@ import { TrendsTab } from "@/components/trends-tab"
 import { CalendarTab } from "@/components/calendar-tab"
 import { ChatAdvisor } from "@/components/chat-advisor"
 import { ProfileTab } from "@/components/profile-tab"
-import { type CortisolReading, generateSampleData } from "@/lib/cortisol-data"
+import { type CortisolReading } from "@/lib/cortisol-data"
 
 export default function CortisolTracker() {
   const [activeTab, setActiveTab] = useState<TabId>("home")
-  const [readings, setReadings] = useState<CortisolReading[]>(() => generateSampleData())
+  const [readings, setReadings] = useState<CortisolReading[]>(() => {
+    if (typeof window === "undefined") return []
+    try {
+      const saved = localStorage.getItem("cortisol-readings")
+      return saved ? (JSON.parse(saved) as CortisolReading[]) : []
+    } catch (error) {
+      console.error("Failed to parse cortisol readings from localStorage:", error)
+      return []
+    }
+  })
+
+useEffect(() => {
+  localStorage.setItem("cortisol-readings", JSON.stringify(readings))
+}, [readings])
 
   const handleAddReading = (reading: CortisolReading) => {
     setReadings((prev) => [...prev, reading])
@@ -54,3 +67,6 @@ export default function CortisolTracker() {
     </div>
   )
 }
+
+
+

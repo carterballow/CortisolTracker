@@ -1,0 +1,2565 @@
+[
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_END",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS"
+      }
+    },
+    "timestamp": "2025-12-28T04:02:29.581Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1766926920,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2025-12-28T21:06:55.467Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1766939899
+        }
+      }
+    },
+    "timestamp": "2025-12-28T21:06:55.732Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1766926920
+        }
+      }
+    },
+    "timestamp": "2025-12-29T16:11:29.495Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1766956015
+        }
+      }
+    },
+    "timestamp": "2025-12-29T16:11:30.311Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2025-12-29T16:55:18.424Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_READ_OBSOLETE",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_DOWN",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2025-12-29T16:56:16.844Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767024390,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2025-12-29T18:18:56.671Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767024691
+        }
+      }
+    },
+    "timestamp": "2025-12-29T18:18:56.727Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767092460,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2025-12-30T15:27:41.039Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767108372
+        }
+      }
+    },
+    "timestamp": "2025-12-30T15:27:41.589Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_READ_OBSOLETE",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_DOWN",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2025-12-31T15:16:56.032Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767092460
+        }
+      }
+    },
+    "timestamp": "2025-12-31T16:25:25.471Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2025-12-31T16:25:25.942Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767108462
+        }
+      }
+    },
+    "timestamp": "2025-12-31T16:25:28.414Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767194880,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2025-12-31T17:45:24.517Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767198325
+        }
+      }
+    },
+    "timestamp": "2025-12-31T17:45:25.607Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767194880
+        }
+      }
+    },
+    "timestamp": "2026-01-01T05:43:14.537Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767203126
+        }
+      }
+    },
+    "timestamp": "2026-01-01T05:43:14.993Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767264930,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-01T11:09:28.422Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767246195
+        }
+      }
+    },
+    "timestamp": "2026-01-01T11:09:28.801Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767275730,
+          "oldEndTimestampSec": 1767264930
+        }
+      }
+    },
+    "timestamp": "2026-01-02T03:42:45.985Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767265768
+        }
+      }
+    },
+    "timestamp": "2026-01-02T03:42:46.512Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767275730
+        }
+      }
+    },
+    "timestamp": "2026-01-02T10:38:43.517Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767325374
+        }
+      }
+    },
+    "timestamp": "2026-01-02T10:38:46.206Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767370230,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-02T16:41:18.022Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767350324
+        }
+      }
+    },
+    "timestamp": "2026-01-02T16:41:18.936Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-01-02T17:34:54.687Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-01-02T17:35:23.468Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767370230
+        }
+      }
+    },
+    "timestamp": "2026-01-03T17:57:35.478Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767372080
+        }
+      }
+    },
+    "timestamp": "2026-01-03T17:57:36.578Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-03T18:02:33.501Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-03T18:02:33.687Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-03T18:02:33.694Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767455130,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-03T18:27:40.571Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767463057
+        }
+      }
+    },
+    "timestamp": "2026-01-03T18:27:41.179Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767455130
+        }
+      }
+    },
+    "timestamp": "2026-01-04T10:39:15.256Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767464862
+        }
+      }
+    },
+    "timestamp": "2026-01-04T10:39:16.433Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767546270,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-04T18:01:30.765Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767523155
+        }
+      }
+    },
+    "timestamp": "2026-01-04T18:01:31.635Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767546270
+        }
+      }
+    },
+    "timestamp": "2026-01-05T09:26:55.6Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767549692
+        }
+      }
+    },
+    "timestamp": "2026-01-05T09:26:56.988Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767625770,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-06T03:59:38.358Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767605215
+        }
+      }
+    },
+    "timestamp": "2026-01-06T03:59:39.46Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767625770
+        }
+      }
+    },
+    "timestamp": "2026-01-06T09:56:34.943Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767671979
+        }
+      }
+    },
+    "timestamp": "2026-01-06T09:56:36.925Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767713550,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-06T15:40:56.834Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767693395
+        }
+      }
+    },
+    "timestamp": "2026-01-06T15:40:57.152Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767713550
+        }
+      }
+    },
+    "timestamp": "2026-01-07T08:56:41.898Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767714056
+        }
+      }
+    },
+    "timestamp": "2026-01-07T08:56:42.716Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767801270,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-07T16:31:54.973Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767776202
+        }
+      }
+    },
+    "timestamp": "2026-01-07T16:31:55.19Z"
+  },
+  {
+    "event": {
+      "gmapsApp": {
+        "stateError": {
+          "appError": "GMAPS_ERROR_NO_CONNECTION",
+          "appState": "GMAPS_ERROR"
+        }
+      }
+    },
+    "timestamp": "2026-01-08T05:09:53.029Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_START",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS",
+        "gps": "GPS_OFF"
+      }
+    },
+    "timestamp": "2026-01-08T05:09:56.317Z"
+  },
+  {
+    "event": {
+    
+    },
+    "timestamp": "2026-01-08T05:09:58.015Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "startReason": {
+          "startReason": "EXERCISE"
+        }
+      }
+    },
+    "timestamp": "2026-01-08T05:09:58.952Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_END",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS"
+      }
+    },
+    "timestamp": "2026-01-08T06:24:44.226Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "TIMEOUT"
+        }
+      }
+    },
+    "timestamp": "2026-01-08T06:25:23.057Z"
+  },
+  {
+    "event": {
+      "gmapsApp": {
+        "stateError": {
+          "appError": "GMAPS_ERROR_NO_CONNECTION",
+          "appState": "GMAPS_ERROR"
+        }
+      }
+    },
+    "timestamp": "2026-01-08T07:16:42.836Z"
+  },
+  {
+    "event": {
+      "gmapsApp": {
+        "stateError": {
+          "appError": "GMAPS_ERROR_ONBOARDING_INCOMPLETE",
+          "appState": "GMAPS_ERROR"
+        }
+      }
+    },
+    "timestamp": "2026-01-08T07:16:43.138Z"
+  },
+  {
+    "event": {
+      "gmapsApp": {
+        "stateError": {
+          "appError": "GMAPS_ERROR_ONBOARDING_INCOMPLETE",
+          "appState": "GMAPS_ERROR"
+        }
+      }
+    },
+    "timestamp": "2026-01-08T07:16:43.173Z"
+  },
+  {
+    "event": {
+      "gmapsApp": {
+        "stateError": {
+          "appError": "GMAPS_ERROR_NO_CONNECTION",
+          "appState": "GMAPS_ERROR"
+        }
+      }
+    },
+    "timestamp": "2026-01-08T07:17:27.888Z"
+  },
+  {
+    "event": {
+      "gmapsApp": {
+        "stateError": {
+          "appError": "GMAPS_ERROR_ONBOARDING_INCOMPLETE",
+          "appState": "GMAPS_ERROR"
+        }
+      }
+    },
+    "timestamp": "2026-01-08T07:17:28.431Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767801270
+        }
+      }
+    },
+    "timestamp": "2026-01-08T09:25:05.007Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767803517
+        }
+      }
+    },
+    "timestamp": "2026-01-08T09:25:05.965Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767889770,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-08T19:57:10.011Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767864305
+        }
+      }
+    },
+    "timestamp": "2026-01-08T19:57:10.241Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_START",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS",
+        "gps": "GPS_OFF"
+      }
+    },
+    "timestamp": "2026-01-09T00:16:12.532Z"
+  },
+  {
+    "event": {
+    
+    },
+    "timestamp": "2026-01-09T00:16:14.523Z"
+  },
+  {
+    "event": {
+    
+    },
+    "timestamp": "2026-01-09T00:16:14.542Z"
+  },
+  {
+    "event": {
+    
+    },
+    "timestamp": "2026-01-09T00:16:29.596Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "startReason": {
+          "startReason": "EXERCISE"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T00:16:30.452Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_END",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS"
+      }
+    },
+    "timestamp": "2026-01-09T01:40:47.082Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "TIMEOUT"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T01:41:58.357Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1767889770
+        }
+      }
+    },
+    "timestamp": "2026-01-09T10:00:29.321Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767902233
+        }
+      }
+    },
+    "timestamp": "2026-01-09T10:00:29.701Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767978210,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-09T17:17:27.159Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1767952830
+        }
+      }
+    },
+    "timestamp": "2026-01-09T17:17:27.624Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1767978690,
+          "oldEndTimestampSec": 1767978210
+        }
+      }
+    },
+    "timestamp": "2026-01-09T17:40:15.388Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:41.999Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:42.897Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:43.069Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:43.073Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:43.075Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:43.078Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:43.081Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:43.569Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-01-09T21:22:45.19Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_START",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS",
+        "gps": "GPS_OFF"
+      }
+    },
+    "timestamp": "2026-01-10T01:15:34.981Z"
+  },
+  {
+    "event": {
+    
+    },
+    "timestamp": "2026-01-10T01:15:37.181Z"
+  },
+  {
+    "event": {
+    
+    },
+    "timestamp": "2026-01-10T01:15:37.2Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "startReason": {
+          "startReason": "EXERCISE"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T01:15:39.02Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:17:04.247Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:17:04.321Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:17:05.631Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:17:15.819Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:17:16.541Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "TIMEOUT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:18:21.784Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:18:21.879Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:18:21.894Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "TIMEOUT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:19:56.553Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:21:59.822Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:21:59.836Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "TIMEOUT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:24:16.263Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:39:21.774Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:39:21.85Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "TIMEOUT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:39:52.952Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:57:49.156Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "BT_DISCONNECT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:57:49.175Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "exitReason": {
+          "exitReason": "TIMEOUT"
+        }
+      }
+    },
+    "timestamp": "2026-01-10T02:58:53.237Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_END",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS"
+      }
+    },
+    "timestamp": "2026-01-10T05:41:53.094Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768067730,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-10T19:26:39.817Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768071343
+        }
+      }
+    },
+    "timestamp": "2026-01-10T19:26:40.382Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_START",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS",
+        "gps": "GPS_OFF"
+      }
+    },
+    "timestamp": "2026-01-13T05:45:41.175Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768067730
+        }
+      }
+    },
+    "timestamp": "2026-01-13T06:02:26.565Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768073201
+        }
+      }
+    },
+    "timestamp": "2026-01-13T06:02:28.053Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768284147
+        }
+      }
+    },
+    "timestamp": "2026-01-13T06:02:28.1Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_END",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS"
+      }
+    },
+    "timestamp": "2026-01-13T06:24:06.423Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768230150,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-13T07:25:10.094Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768284148
+        }
+      }
+    },
+    "timestamp": "2026-01-13T07:25:12.407Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768230150
+        }
+      }
+    },
+    "timestamp": "2026-01-13T09:41:23.944Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768289112
+        }
+      }
+    },
+    "timestamp": "2026-01-13T09:41:25.098Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_READ_OBSOLETE",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-01-13T12:14:51.155Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768321530,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-13T19:30:16.113Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768297284
+        }
+      }
+    },
+    "timestamp": "2026-01-13T19:30:16.576Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768321530
+        }
+      }
+    },
+    "timestamp": "2026-01-14T15:14:20.031Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768332617
+        }
+      }
+    },
+    "timestamp": "2026-01-14T15:14:20.491Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768403430,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-14T16:18:33.99Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768403661
+        }
+      }
+    },
+    "timestamp": "2026-01-14T16:18:34.245Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768403430
+        }
+      }
+    },
+    "timestamp": "2026-01-15T16:44:20.906Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768407517
+        }
+      }
+    },
+    "timestamp": "2026-01-15T16:44:21.279Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768495050,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-15T19:59:21.235Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768495463
+        }
+      }
+    },
+    "timestamp": "2026-01-15T19:59:21.261Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768495050
+        }
+      }
+    },
+    "timestamp": "2026-01-16T08:04:27.332Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768507171
+        }
+      }
+    },
+    "timestamp": "2026-01-16T08:04:27.822Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768578750,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-16T16:08:43.837Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768550669
+        }
+      }
+    },
+    "timestamp": "2026-01-16T16:31:09.633Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768578750
+        }
+      }
+    },
+    "timestamp": "2026-01-17T08:37:05.968Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768581070
+        }
+      }
+    },
+    "timestamp": "2026-01-17T08:37:11.115Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-17T09:38:38.815Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768639008
+        }
+      }
+    },
+    "timestamp": "2026-01-17T09:38:39.554Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768666650,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-17T16:30:04.271Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768642719
+        }
+      }
+    },
+    "timestamp": "2026-01-17T16:30:04.53Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768666650
+        }
+      }
+    },
+    "timestamp": "2026-01-18T11:25:05.342Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768667405
+        }
+      }
+    },
+    "timestamp": "2026-01-18T11:25:06.977Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768750950,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-18T16:02:49.21Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768735506
+        }
+      }
+    },
+    "timestamp": "2026-01-18T16:02:49.439Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768750950
+        }
+      }
+    },
+    "timestamp": "2026-01-19T08:33:17.463Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768752169
+        }
+      }
+    },
+    "timestamp": "2026-01-19T08:33:19.036Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768830450,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-19T15:22:36.178Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768811597
+        }
+      }
+    },
+    "timestamp": "2026-01-19T15:22:37.02Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768843890,
+          "oldEndTimestampSec": 1768830450
+        }
+      }
+    },
+    "timestamp": "2026-01-19T20:30:28.864Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768843890
+        }
+      }
+    },
+    "timestamp": "2026-01-20T10:56:45.445Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768836155
+        }
+      }
+    },
+    "timestamp": "2026-01-20T10:56:48.138Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1768928670,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-20T17:16:58.067Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768906605
+        }
+      }
+    },
+    "timestamp": "2026-01-20T17:16:59.2Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1768928670
+        }
+      }
+    },
+    "timestamp": "2026-01-21T09:53:40.185Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768929419
+        }
+      }
+    },
+    "timestamp": "2026-01-21T09:53:41.283Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769008290,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-21T16:17:08.138Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1768989221
+        }
+      }
+    },
+    "timestamp": "2026-01-21T16:17:08.315Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769008290
+        }
+      }
+    },
+    "timestamp": "2026-01-22T08:08:06.886Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769012230
+        }
+      }
+    },
+    "timestamp": "2026-01-22T08:08:08.135Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769101590,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-22T17:26:18.195Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769069287
+        }
+      }
+    },
+    "timestamp": "2026-01-22T17:26:18.332Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769101590
+        }
+      }
+    },
+    "timestamp": "2026-01-23T08:00:51.417Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769102779
+        }
+      }
+    },
+    "timestamp": "2026-01-23T08:00:53.698Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-23T08:00:54.4Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769155243
+        }
+      }
+    },
+    "timestamp": "2026-01-23T08:00:55.388Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769184360,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-23T17:31:05.822Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769155256
+        }
+      }
+    },
+    "timestamp": "2026-01-23T17:31:06.358Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769184360
+        }
+      }
+    },
+    "timestamp": "2026-01-24T08:04:57.879Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769189466
+        }
+      }
+    },
+    "timestamp": "2026-01-24T08:05:02.198Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769278050,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-24T20:47:06.817Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769241900
+        }
+      }
+    },
+    "timestamp": "2026-01-24T20:47:07.088Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769278050
+        }
+      }
+    },
+    "timestamp": "2026-01-25T08:21:48.458Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769287628
+        }
+      }
+    },
+    "timestamp": "2026-01-25T10:52:01.754Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769367510,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-25T19:16:04.906Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769338321
+        }
+      }
+    },
+    "timestamp": "2026-01-25T19:16:05.334Z"
+  },
+  {
+    "event": {
+      "gmapsApp": {
+        "stateError": {
+          "appError": "GMAPS_ERROR_ONBOARDING_INCOMPLETE",
+          "appState": "GMAPS_ERROR"
+        }
+      }
+    },
+    "timestamp": "2026-01-26T07:55:54.158Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769367510
+        }
+      }
+    },
+    "timestamp": "2026-01-26T08:36:05.827Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769368566
+        }
+      }
+    },
+    "timestamp": "2026-01-26T08:36:07.129Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_NO_APP_STATUS"
+        }
+      }
+    },
+    "timestamp": "2026-01-26T09:09:44.091Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769442090,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-26T16:49:41.918Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769416565
+        }
+      }
+    },
+    "timestamp": "2026-01-26T16:49:42.721Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769533680,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-27T21:22:32.626Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769503071
+        }
+      }
+    },
+    "timestamp": "2026-01-27T21:22:33.151Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769533680
+        }
+      }
+    },
+    "timestamp": "2026-01-28T08:13:14.836Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769548954
+        }
+      }
+    },
+    "timestamp": "2026-01-28T08:13:16.111Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769620590,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-28T19:21:06.323Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769587997
+        }
+      }
+    },
+    "timestamp": "2026-01-28T19:21:06.362Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769620590
+        }
+      }
+    },
+    "timestamp": "2026-01-29T09:44:28.682Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769628066
+        }
+      }
+    },
+    "timestamp": "2026-01-29T09:44:29.678Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769696820,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-29T18:50:56.398Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769679869
+        }
+      }
+    },
+    "timestamp": "2026-01-29T18:50:56.583Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769696820,
+          "oldEndTimestampSec": 1769696820
+        }
+      }
+    },
+    "timestamp": "2026-01-30T05:15:14.197Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769696820
+        }
+      }
+    },
+    "timestamp": "2026-01-30T08:49:25.317Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769712656
+        }
+      }
+    },
+    "timestamp": "2026-01-30T08:49:26.245Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_READ_OBSOLETE",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-01-30T18:06:39.852Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769796030,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-30T18:29:10.756Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769762966
+        }
+      }
+    },
+    "timestamp": "2026-01-30T18:29:11.296Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1769882250,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-01-31T19:10:21.166Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769882380
+        }
+      }
+    },
+    "timestamp": "2026-01-31T19:10:21.343Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1769882250
+        }
+      }
+    },
+    "timestamp": "2026-02-01T08:48:28.084Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1769886623
+        }
+      }
+    },
+    "timestamp": "2026-02-01T08:48:29.841Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-02-15T08:25:51.345Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1771133774
+        }
+      }
+    },
+    "timestamp": "2026-02-15T08:25:53.051Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1771161600,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-02-15T13:52:30.819Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_READ_OBSOLETE",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_DOWN",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-16T16:32:02.509Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1771263090,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-02-16T17:33:22.765Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1771263071
+        }
+      }
+    },
+    "timestamp": "2026-02-16T17:33:23.32Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_START",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS",
+        "gps": "GPS_OFF"
+      }
+    },
+    "timestamp": "2026-02-17T18:41:40.109Z"
+  },
+  {
+    "event": {
+    
+    },
+    "timestamp": "2026-02-17T18:41:42.94Z"
+  },
+  {
+    "event": {
+    
+    },
+    "timestamp": "2026-02-17T18:41:42.962Z"
+  },
+  {
+    "event": {
+      "aspenConfig": {
+        "startReason": {
+          "startReason": "EXERCISE"
+        }
+      }
+    },
+    "timestamp": "2026-02-17T18:41:43.843Z"
+  },
+  {
+    "event": {
+      "exappSession": {
+        "action": "MANUAL_END",
+        "exerciseType": "EXERCISE_TYPE_WEIGHTS"
+      }
+    },
+    "timestamp": "2026-02-17T19:35:15.101Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1771263090
+        }
+      }
+    },
+    "timestamp": "2026-02-17T20:17:30.323Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-02-19T11:14:06.748Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1771481071
+        }
+      }
+    },
+    "timestamp": "2026-02-19T11:14:07.543Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1771523310,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-02-20T00:11:04.685Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1771499644
+        }
+      }
+    },
+    "timestamp": "2026-02-20T00:11:04.87Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:33:44.885Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:33:48.248Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:34:42.337Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:34:42.346Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:35:17.76Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:35:34.319Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appError": "MUSIC_ERROR_EMPTY_PLAYLIST"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:35:35.438Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:35:44.962Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:37:21.756Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:37:34.083Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:37:38.1Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:39:40.059Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:39:46.481Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:39:54.752Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:40:48.657Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_STATE_PENDING",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:41:07.416Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1771523310,
+          "oldEndTimestampSec": 1771523310
+        }
+      }
+    },
+    "timestamp": "2026-02-20T05:53:07.093Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 0,
+          "oldEndTimestampSec": 1771523310
+        }
+      }
+    },
+    "timestamp": "2026-02-20T09:21:42.164Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1771546266
+        }
+      }
+    },
+    "timestamp": "2026-02-20T09:21:42.458Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "sleep": {
+          "newEndTimestampSec": 1771607850,
+          "oldEndTimestampSec": 0
+        }
+      }
+    },
+    "timestamp": "2026-02-20T19:16:15.252Z"
+  },
+  {
+    "event": {
+      "dataProvider": {
+        "readiness": {
+          "oldTimestampSec": 1771579302
+        }
+      }
+    },
+    "timestamp": "2026-02-20T19:16:15.584Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_READ_OBSOLETE",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T19:26:16.427Z"
+  },
+  {
+    "event": {
+      "musicApp": {
+        "errorField": {
+          "appCommsState": "APP_COMMS_READ_OBSOLETE",
+          "appError": "MUSIC_ERROR_CANT_FIND_PHONE",
+          "appFormat": "APP_FORMAT_STANDALONE",
+          "btLinkState": "BT_LINK_STATE_UP",
+          "obdState": "APP_OBD_STATE_NOT_DONE"
+        }
+      }
+    },
+    "timestamp": "2026-02-20T19:26:48.147Z"
+  }
+]

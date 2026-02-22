@@ -1,0 +1,2 @@
+id,title,body,priority,destination,creation_time,expiration_time,left_action_text,right_action_text,entity_id,entity_type
+4546935771247288408,Take it easy,"You’ve really pushed yourself recently! To avoid overtraining, take some time to slow down and recover. Target 1–18 cardio load today.",1000,DESTINATION_TODAY_FOCUS,2026-02-21T17:58:46.641697Z,2026-02-22T07:59:59.999999999Z,,,,ENTITY_TYPE_UNSPECIFIED
