@@ -8,6 +8,8 @@ import { WeeklyTrendChart } from "@/components/weekly-trend-chart"
 import { ReadingsTable } from "@/components/readings-table"
 import { type CortisolReading } from "@/lib/cortisol-data"
 
+type SleepDay = { date: string; minutesAsleep: number; efficiency: number }
+
 
 interface TrendsTabProps {
   readings: CortisolReading[]
@@ -18,7 +20,6 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
   const [selectedDate, setSelectedDate] = useState(
     () => new Date().toISOString().split("T")[0]
   )
-  type SleepDay = { date: string; minutesAsleep: number; efficiency: number }
 
   const [sleepDays, setSleepDays] = useState<SleepDay[]>([])
   const [sleepLoading, setSleepLoading] = useState(true)
@@ -27,7 +28,7 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
   useEffect(() => {
     let cancelled = false
 
-      ; (async () => {
+      ;(async () => {
         try {
           setSleepLoading(true)
           setSleepError(null)
@@ -61,6 +62,7 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
 
   const navigateDate = (direction: "prev" | "next") => {
     const currentIndex = availableDates.indexOf(selectedDate)
+
     if (direction === "prev" && currentIndex > 0) {
       setSelectedDate(availableDates[currentIndex - 1])
     } else if (direction === "next" && currentIndex < availableDates.length - 1) {
@@ -69,7 +71,10 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
   }
 
   const currentDateIndex = availableDates.indexOf(selectedDate)
-
+  const last7Sleep = useMemo(() => {
+    const sorted = [...sleepDays].sort((a, b) => a.date.localeCompare(b.date))
+    return sorted.slice(-7).reverse()
+  }, [sleepDays])
   return (
     <div className="flex flex-col gap-5 px-4 py-5">
       <div className="flex items-center justify-between">
@@ -107,17 +112,21 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
         </div>
       </div>
       <div className="rounded-xl border bg-card p-4">
-        <h3 className="font-semibold">Fitbit Sleep (last 30 days)</h3>
+        <h3 className="font-semibold">Fitbit Sleep (last 7 days)</h3>
 
-        {sleepDays.length === 0 ? (
+        {sleepLoading ? (
           <p className="mt-2 text-sm text-muted-foreground">Loading Fitbit sleep…</p>
+        ) : sleepError ? (
+          <p className="mt-2 text-sm text-red-600">{sleepError}</p>
+        ) : last7Sleep.length === 0 ? (
+          <p className="mt-2 text-sm text-muted-foreground">No Fitbit sleep data found.</p>
         ) : (
           <div className="mt-2 space-y-1 text-sm">
-            {sleepDays.slice().reverse().slice(0, 7).map((d) => (
+            {last7Sleep.map((d) => (
               <div key={d.date} className="flex justify-between">
                 <span>{d.date}</span>
                 <span className="tabular-nums">
-                  {Math.round(d.minutesAsleep / 60)}h {d.minutesAsleep % 60}m • {d.efficiency}%
+                  {Math.floor(d.minutesAsleep / 60)}h {d.minutesAsleep % 60}m • {d.efficiency}%
                 </span>
               </div>
             ))}
