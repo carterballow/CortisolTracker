@@ -1,90 +1,150 @@
 "use client"
 
-import { Activity, TrendingDown, TrendingUp, Clock } from "lucide-react"
+import { useEffect, useState } from "react"
+import { TrendingDown, Clock, TrendingUp, Activity } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { type CortisolReading, getCortisolStatus, HEALTHY_RANGES } from "@/lib/cortisol-data"
+import { CortisolGauge } from "@/components/cortisol-gauge"
 
-interface StatsOverviewProps {
-  readings: CortisolReading[]
+type HomePrediction = {
+  date: string
+  wakeUgdl: number
+  currentUgdl: number
+  averageUgdlToday: number
+  peakUgdlToday: number
+  avgNationalNow: number
+  percentVsAvgNow: number
+  inNationalRangeNow: boolean
+  bandLow: number
+  bandHigh: number
+  error?: string
 }
 
-export function StatsOverview({ readings }: StatsOverviewProps) {
-  const todayStr = new Date().toISOString().split("T")[0]
-  const todayReadings = readings.filter((r) => r.date === todayStr)
-  const latestReading = todayReadings.length > 0 ? todayReadings[todayReadings.length - 1] : null
+export function StatsOverview() {
+  const [data, setData] = useState<HomePrediction | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [err, setErr] = useState<string | null>(null)
 
-  const avgToday =
-    todayReadings.length > 0
-      ? Math.round((todayReadings.reduce((s, r) => s + r.value, 0) / todayReadings.length) * 10) / 10
-      : null
+  useEffect(() => {
+    let cancelled = false
+      ; (async () => {
+        try {
+          setLoading(true)
+          setErr(null)
 
-  const normalCount = todayReadings.filter(
-    (r) => getCortisolStatus(r.value, r.timeOfDay) === "normal"
-  ).length
+          const res = await fetch("/api/chat/prediction?days=1", { cache: "no-store" })
+          const json = (await res.json()) as HomePrediction
 
-  const peakReading = todayReadings.length > 0 ? todayReadings.reduce((max, r) => (r.value > max.value ? r : max), todayReadings[0]) : null
+          if (!res.ok) throw new Error(json?.error || `HTTP ${res.status}`)
+
+          if (!cancelled) setData(json)
+        } catch (e) {
+          if (!cancelled) {
+            setErr(e instanceof Error ? e.message : "Failed to load prediction")
+            setData(null)
+          }
+        } finally {
+          if (!cancelled) setLoading(false)
+        }
+      })()
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const topValue =
+    loading ? "…" : err ? "--" : data ? data.currentUgdl.toFixed(2) : "--"
+
+  const topSub =
+    loading
+      ? "Loading Fitbit-based estimate…"
+      : err
+        ? err
+        : data
+          ? `${data.inNationalRangeNow ? "Normal" : "Outside"} • ${data.percentVsAvgNow > 0 ? "+" : ""}${data.percentVsAvgNow.toFixed(1)}% vs avg now`
+          : "—"
 
   const stats = [
     {
-      title: "Latest Reading",
-      value: latestReading ? `${latestReading.value}` : "--",
+      title: "Average",
+      value: loading ? "…" : err ? "--" : data ? data.averageUgdlToday.toFixed(2) : "--",
       unit: "mcg/dL",
-      description: latestReading
-        ? `${getCortisolStatus(latestReading.value, latestReading.timeOfDay) === "normal" ? "Within" : "Outside"} healthy range`
-        : "No readings today",
-      icon: Activity,
-      color:
-        latestReading && getCortisolStatus(latestReading.value, latestReading.timeOfDay) === "normal"
-          ? "text-accent"
-          : latestReading
-            ? "text-destructive"
-            : "text-muted-foreground",
-    },
-    {
-      title: "Today's Average",
-      value: avgToday !== null ? `${avgToday}` : "--",
-      unit: "mcg/dL",
-      description: todayReadings.length > 0 ? `From ${todayReadings.length} reading${todayReadings.length > 1 ? "s" : ""}` : "No data yet",
+      description: "Today (estimated from curve)",
       icon: TrendingDown,
-      color: "text-primary",
     },
     {
-      title: "In Range",
-      value: todayReadings.length > 0 ? `${normalCount}/${todayReadings.length}` : "--",
-      unit: "",
-      description: todayReadings.length > 0 ? `${Math.round((normalCount / todayReadings.length) * 100)}% of readings` : "No data yet",
-      icon: TrendingUp,
-      color: "text-accent",
-    },
-    {
-      title: "Peak Level",
-      value: peakReading ? `${peakReading.value}` : "--",
-      unit: peakReading ? "mcg/dL" : "",
-      description: peakReading
-        ? `${peakReading.timeOfDay.charAt(0).toUpperCase() + peakReading.timeOfDay.slice(1)} (range: ${HEALTHY_RANGES[peakReading.timeOfDay].min}-${HEALTHY_RANGES[peakReading.timeOfDay].max})`
-        : "No readings today",
+      title: "Wake",
+      value: loading ? "…" : err ? "--" : data ? data.wakeUgdl.toFixed(2) : "--",
+      unit: "mcg/dL",
+      description: "Model prediction at wake",
       icon: Clock,
-      color: "text-primary",
+    },
+    {
+      title: "Current vs Average",
+      value:
+        loading ? "…" : err ? "--" : data ? `${data.percentVsAvgNow > 0 ? "+" : ""}${data.percentVsAvgNow.toFixed(1)}%` : "--",
+      unit: "",
+      description: data ? `Avg now: ${data.avgNationalNow.toFixed(2)} mcg/dL` : "—",
+      icon: TrendingUp,
+    },
+    {
+      title: "Normal Range",
+      value: loading ? "…" : err ? "--" : data ? (data.inNationalRangeNow ? "Yes" : "No") : "--",
+      unit: "",
+      description: data
+        ? `Now band: ${data.bandLow.toFixed(2)}–${data.bandHigh.toFixed(2)} • Peak: ${data.peakUgdlToday.toFixed(2)}`
+        : "—",
+      icon: Activity,
     },
   ]
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {stats.map((stat) => (
-        <Card key={stat.title}>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">{stat.title}</CardTitle>
-            <stat.icon className={`size-4 ${stat.color}`} />
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-baseline gap-1">
-              <span className="text-2xl font-bold tracking-tight">{stat.value}</span>
-              {stat.unit && <span className="text-sm text-muted-foreground">{stat.unit}</span>}
-            </div>
-            <p className="mt-1 text-xs text-muted-foreground">{stat.description}</p>
-          </CardContent>
-        </Card>
-      ))}
+    <div className="flex flex-col gap-4">
+      {/* Top "Current" header */}
+      <div className="rounded-xl border bg-card p-4">
+        <div className="flex items-center justify-between">
+          <h3 className="font-semibold">Cortisol</h3>
+          <span className="text-xs text-muted-foreground">Fitbit-based</span>
+        </div>
+
+        <div className="mt-2 flex items-baseline gap-2">
+          <span className="text-4xl font-bold tabular-nums">{topValue}</span>
+          <span className="text-sm text-muted-foreground">mcg/dL</span>
+        </div>
+
+        <p className="mt-1 text-sm text-muted-foreground">{topSub}</p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          Model estimate (experimental). Use trends over time, not a single moment.
+        </p>
+        {!loading && !err && data ? (
+          <div className="mt-4">
+            <CortisolGauge
+              percentVsAvgNow={data.percentVsAvgNow}
+              label={data.inNationalRangeNow ? "NORMAL" : data.percentVsAvgNow < 0 ? "LOW" : "HIGH"}
+              clampPct={50}
+            />
+          </div>
+        ) : null}
+      </div>
+
+      {/* Four cards */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {stats.map((stat) => (
+          <Card key={stat.title}>
+            <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardTitle className="text-sm font-medium text-muted-foreground">{stat.title}</CardTitle>
+              <stat.icon className="size-4 text-primary" />
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-baseline gap-1">
+                <span className="text-2xl font-bold tracking-tight">{stat.value}</span>
+                {stat.unit && <span className="text-sm text-muted-foreground">{stat.unit}</span>}
+              </div>
+              <p className="mt-1 text-xs text-muted-foreground">{stat.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   )
 }

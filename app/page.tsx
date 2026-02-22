@@ -48,12 +48,7 @@ export default function CortisolTracker() {
       {/* Tab content */}
       <main className="flex-1 overflow-y-auto pb-20">
         {activeTab === "home" && (
-          <div className="px-4 py-5">
-            <div className="rounded-xl border bg-card p-4">
-              <h2 className="text-lg font-semibold">Home</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Coming soon.</p>
-            </div>
-          </div>
+          <HomeTab readings={readings} onAddReading={handleAddReading} />
         )}
         {activeTab === "trends" && (
           <TrendsTab readings={readings} onDeleteReading={handleDeleteReading} />
