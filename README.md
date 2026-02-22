@@ -46,7 +46,7 @@ A significant portion of the effort focused on infrastructure, system design, an
 ## 📸 Project Screenshots
 
 ### Core Interface
-![Core Interface](images/interface.png)
+![Fully Trained AI Model](images/interface.png)
 
 ### System Architecture
 ![Architecture Diagram](images/architecture.png)
