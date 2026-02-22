@@ -1,1 +1,20 @@
 node_modules
+cat >> .gitignore <<'EOF'
+
+# Next.js / Turbopack
+.next/
+.turbo/
+.next-cache/
+out/
+
+# deps
+node_modules/
+
+# local temp
+.tmp/
+
+# env (never commit)
+.env
+EOF
+# local experiments
+app/api/chat/advisor/
