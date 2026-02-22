@@ -1,12 +1,13 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useMemo, useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DailyCurveChart } from "@/components/daily-curve-chart"
 import { WeeklyTrendChart } from "@/components/weekly-trend-chart"
 import { ReadingsTable } from "@/components/readings-table"
 import { type CortisolReading } from "@/lib/cortisol-data"
+
 
 interface TrendsTabProps {
   readings: CortisolReading[]
@@ -17,6 +18,42 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
   const [selectedDate, setSelectedDate] = useState(
     () => new Date().toISOString().split("T")[0]
   )
+  type SleepDay = { date: string; minutesAsleep: number; efficiency: number }
+
+  const [sleepDays, setSleepDays] = useState<SleepDay[]>([])
+  const [sleepLoading, setSleepLoading] = useState(true)
+  const [sleepError, setSleepError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+
+      ; (async () => {
+        try {
+          setSleepLoading(true)
+          setSleepError(null)
+
+          const res = await fetch("/api/chat/fitbit", { cache: "no-store" })
+          if (!res.ok) throw new Error(`Failed to load Fitbit sleep (HTTP ${res.status})`)
+
+          const data = (await res.json()) as { sleepDays?: SleepDay[] }
+
+          if (!cancelled) {
+            setSleepDays(Array.isArray(data.sleepDays) ? data.sleepDays : [])
+          }
+        } catch (err) {
+          if (!cancelled) {
+            setSleepError(err instanceof Error ? err.message : "Failed to load Fitbit sleep")
+            setSleepDays([])
+          }
+        } finally {
+          if (!cancelled) setSleepLoading(false)
+        }
+      })()
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   const availableDates = useMemo(() => {
     return [...new Set(readings.map((r) => r.date))].sort()
@@ -69,7 +106,24 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
           </Button>
         </div>
       </div>
+      <div className="rounded-xl border bg-card p-4">
+        <h3 className="font-semibold">Fitbit Sleep (last 30 days)</h3>
 
+        {sleepDays.length === 0 ? (
+          <p className="mt-2 text-sm text-muted-foreground">Loading Fitbit sleep…</p>
+        ) : (
+          <div className="mt-2 space-y-1 text-sm">
+            {sleepDays.slice().reverse().slice(0, 7).map((d) => (
+              <div key={d.date} className="flex justify-between">
+                <span>{d.date}</span>
+                <span className="tabular-nums">
+                  {Math.round(d.minutesAsleep / 60)}h {d.minutesAsleep % 60}m • {d.efficiency}%
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
       <DailyCurveChart readings={readings} selectedDate={selectedDate} />
       <WeeklyTrendChart readings={readings} />
       <ReadingsTable readings={readings} onDelete={onDeleteReading} />
