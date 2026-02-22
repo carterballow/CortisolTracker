@@ -16,3 +16,26 @@ data/
 # env (never commit)
 .env
 EOF
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter / OS
+.DS_Store
+
+# Hugging Face / Transformers caches
+.cache/
+**/.cache/
+huggingface/
+**/huggingface/
+
+# Torch / model artifacts
+*.safetensors
+*.bin
+*.pt
+
+# Node (if needed)
+node_modules/
