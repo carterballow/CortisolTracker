@@ -13,6 +13,25 @@ import {
 } from "recharts"
 import { type CortisolReading } from "@/lib/cortisol-data"
 
+const TIME_SHIFT_MINUTES = 12 * 60
+
+function shiftMinutes(m: number) {
+    return (m - TIME_SHIFT_MINUTES + 1440) % 1440
+}
+
+function timeToMinutes(t: string) {
+    const hh = parseInt(t.slice(0, 2), 10)
+    const mm = parseInt(t.slice(3, 5), 10)
+    return hh * 60 + mm
+}
+
+function minutesToTime(m: number) {
+    const hh = String(Math.floor(m / 60)).padStart(2, "0")
+    const mm = String(m % 60).padStart(2, "0")
+    return `${hh}:${mm}`
+}
+
+
 function median(nums: number[]) {
     if (nums.length === 0) return 0
     const sorted = [...nums].sort((a, b) => a - b)
@@ -87,7 +106,8 @@ export function IntradayCompareChart({
 
         // Steps
         for (const p of steps) {
-            const key = p.time.slice(0, 5)
+            const shifted = minutesToTime(shiftMinutes(timeToMinutes(p.time)))
+            const key = shifted
             const i = index.get(key)
             if (i !== undefined) rows[i].steps = p.value
         }
