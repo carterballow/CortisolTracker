@@ -1,5 +1,0 @@
-timestamp,event_name,email,location,ip,outcome,reason
-Fri Jan 02 03:40:55 UTC 2026,Update profile data,ruderdk@gmail.com,,172.22.32.195,SUCCESS,
-Sun Dec 28 16:37:34 UTC 2025,Update profile data,ruderdk@gmail.com,,172.22.26.7,SUCCESS,
-Thu Aug 28 15:09:06 UTC 2025,Update profile data,ruderdk@gmail.com,,172.22.25.98,SUCCESS,
-Wed Aug 13 05:31:46 UTC 2025,Signup,1v4imROkZJGyE6bTZTSB@fitbit-identity.goog,,,SUCCESS,

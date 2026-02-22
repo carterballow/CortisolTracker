@@ -9,7 +9,7 @@ out/
 
 # deps
 node_modules/
-
+.data/
 # local temp
 .tmp/
 
