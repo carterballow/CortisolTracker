@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DailyCurveChart } from "@/components/daily-curve-chart"
 import { WeeklyTrendChart } from "@/components/weekly-trend-chart"
-import { ReadingsTable } from "@/components/readings-table"
 import { type CortisolReading } from "@/lib/cortisol-data"
 
 // ✅ NEW: import the intraday comparison chart (you will create this file next)
@@ -357,19 +356,18 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
     }
   }, [availableDates, selectedDate])
 
-  const navigateDate = (direction: "prev" | "next") => {
-    const currentIndex = availableDates.indexOf(selectedDate)
-    if (currentIndex === -1) return
+  const goToOlderDay = () => {
+    const i = availableDates.indexOf(selectedDate)
+    if (i === -1) return
+    const next = i + 1
+    if (next < availableDates.length) setSelectedDate(availableDates[next])
+  }
 
-    if (direction === "prev") {
-      // older day
-      const nextIndex = currentIndex + 1
-      if (nextIndex < availableDates.length) setSelectedDate(availableDates[nextIndex])
-    } else {
-      // newer day
-      const nextIndex = currentIndex - 1
-      if (nextIndex >= 0) setSelectedDate(availableDates[nextIndex])
-    }
+  const goToNewerDay = () => {
+    const i = availableDates.indexOf(selectedDate)
+    if (i === -1) return
+    const next = i - 1
+    if (next >= 0) setSelectedDate(availableDates[next])
   }
 
   const currentDateIndex = availableDates.indexOf(selectedDate)
@@ -411,10 +409,9 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
             variant="outline"
             size="icon"
             className="size-8"
-            onClick={() => navigateDate("prev")}
-            disabled={!selectedDate || currentDateIndex >= availableDates.length - 1} // prev (older)
-
-            aria-label="Previous day"
+            onClick={goToNewerDay}
+            disabled={!selectedDate || currentDateIndex <= 0}
+            aria-label="Newer day"
           >
             <ChevronLeft className="size-4" />
           </Button>
@@ -427,9 +424,9 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
             variant="outline"
             size="icon"
             className="size-8"
-            onClick={() => navigateDate("next")}
-            disabled={!selectedDate || currentDateIndex <= 0} // next (newer)
-            aria-label="Next day"
+            onClick={goToOlderDay}
+            disabled={!selectedDate || currentDateIndex >= availableDates.length - 1}
+            aria-label="Older day"
           >
             <ChevronRight className="size-4" />
           </Button>
@@ -580,7 +577,6 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
       )}
 
       <WeeklyTrendChart readings={readings} />
-      <ReadingsTable readings={readings} onDelete={onDeleteReading} />
-    </div>
+      \    </div>
   )
 }
