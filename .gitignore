@@ -17,5 +17,3 @@ node_modules/
 # env (never commit)
 .env
 EOF
-# local experiments
-app/api/chat/advisor/
