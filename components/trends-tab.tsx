@@ -1,5 +1,5 @@
 "use client"
-
+import Image from "next/image"
 import { useMemo, useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -567,16 +567,29 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
         )}
       </div>
 
-      {/* Daily cortisol curve (keep) */}
-      {selectedDate ? (
-        <DailyCurveChart readings={readings} selectedDate={selectedDate} />
-      ) : (
-        <div className="rounded-xl border bg-card p-4 text-sm text-muted-foreground">
-          Add a cortisol reading to view the daily curve.
-        </div>
-      )}
+      {/* Educational cortisol curve image */}
+      <div className="rounded-xl border bg-card p-4">
+        <h3 className="font-semibold mb-3 text-center">
+          The Natural Daily Cortisol Rhythm
+        </h3>
 
-      <WeeklyTrendChart readings={readings} />
+        <div className="flex justify-center">
+          <Image
+            src="/s-blob-v1-IMAGE-8DOm5S4zGDI.png"
+            alt="Healthy cortisol circadian rhythm diagram"
+            width={750}
+            height={420}
+            className="rounded-lg object-contain"
+            priority
+          />
+        </div>
+
+        <p className="mt-3 text-sm text-muted-foreground text-center max-w-xl mx-auto">
+          In a healthy circadian rhythm, cortisol rises shortly after waking (the cortisol awakening response),
+          then gradually declines throughout the day and reaches its lowest point at night before sleep.
+          Your readings and physiological stress markers are compared against this pattern.
+        </p>
+      </div>
       \    </div>
   )
 }
