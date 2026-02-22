@@ -13,6 +13,7 @@ node_modules/
 # local temp
 .tmp/
 
+.data/
 # env (never commit)
 .env
 EOF
