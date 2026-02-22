@@ -20,7 +20,7 @@ export function ChatAdvisor() {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const { messages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({ api: "/api/chat" }),
+    transport: new DefaultChatTransport({ api: "/api/chat/advisor" }),
   })
 
   const isLoading = status === "streaming" || status === "submitted"
