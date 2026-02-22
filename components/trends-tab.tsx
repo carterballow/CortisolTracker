@@ -16,7 +16,8 @@ type IntradayPoint = { time: string; value: number }
 const TIME_SHIFT_MINUTES = 12 * 60
 
 function shiftMinutes(m: number) {
-  return (m + TIME_SHIFT_MINUTES) % 1440
+  // Shift BACK by 12 hours (fixes the "sleep appears midday" problem)
+  return (m - TIME_SHIFT_MINUTES + 1440) % 1440
 }
 function timeToMinutes(t: string) {
   const hh = parseInt(t.slice(0, 2), 10)
@@ -104,18 +105,18 @@ function build5MinCsv(args: {
   ]
 
   const rows = bins.map((b) => {
-    const start = minutesToHHMM(shiftMinutes(b.startMin))
-    const end = minutesToHHMM(shiftMinutes((b.startMin + 5) % 1440))
+    const start = minutesToHHMM(b.startMin)
+    const end = minutesToHHMM((b.startMin + 5) % 1440)
+
     const avgHr = b.hrCount ? b.hrSum / b.hrCount : null
-    const intensityPct = avgHr !== null && baseline
-      ? ((avgHr / baseline) - 1) * 100
-      : null
+    const intensityPct =
+      avgHr !== null && baseline ? ((avgHr / baseline) - 1) * 100 : null
 
     return [
       date,
       start,
       end,
-      intensityPct === null ? "" : Math.round(intensityPct * 10) / 10, // 1 decimal
+      intensityPct === null ? "" : Math.round(intensityPct * 10) / 10,
       b.stepsSum,
       baseline ? Math.round(baseline * 10) / 10 : "",
       sleepMinutesPrevNight ?? "",
@@ -161,13 +162,19 @@ async function buildAllDaysCsv(args: {
 
   const allLines: string[] = [header]
 
+  let appendedDays = 0
+
   for (const date of dates) {
     try {
       const res = await fetch(
         `/api/chat/fitbit?date=${encodeURIComponent(date)}&include=intraday`,
         { cache: "no-store" }
       )
-      if (!res.ok) continue
+
+      if (!res.ok) {
+        console.warn("[ALL CSV] skip date (HTTP):", date, res.status)
+        continue
+      }
 
       const payload = (await res.json()) as {
         heartRate?: IntradayPoint[]
@@ -181,13 +188,24 @@ async function buildAllDaysCsv(args: {
         sleepMinutesPrevNight: sleepMap.get(date) ?? null,
       })
 
-      // Append only data rows (skip header)
-      const lines = csv.split("\n")
-      allLines.push(...lines.slice(1))
-    } catch {
-      // skip bad day
+      // Add the 288 data rows (skip header)
+      const lines = csv.trim().split(/\r?\n/)
+      if (lines.length > 1) {
+        allLines.push(...lines.slice(1))
+        appendedDays++
+      } else {
+        console.warn("[ALL CSV] no rows produced for date:", date)
+      }
+    } catch (e) {
+      console.warn("[ALL CSV] fetch failed for date:", date, e)
       continue
     }
+  }
+
+  if (appendedDays === 0) {
+    console.warn("[ALL CSV] No days appended. Check console logs above.")
+  } else {
+    console.log("[ALL CSV] appended days:", appendedDays, "total lines:", allLines.length)
   }
 
   return allLines.join("\n")
@@ -494,8 +512,8 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
         <p className="mt-1 text-sm text-muted-foreground">
           Heart rate + steps (Fitbit) overlaid with your cortisol readings for the selected date.
         </p>
-        {intraday && (
-          <div className="mt-3 flex flex-wrap gap-2">
+        <div className="mt-3 flex flex-wrap gap-2">
+          {intraday && (
             <Button
               variant="outline"
               onClick={() => {
@@ -510,23 +528,26 @@ export function TrendsTab({ readings, onDeleteReading }: TrendsTabProps) {
             >
               Export 5-min CSV
             </Button>
+          )}
 
-            <Button
-              variant="outline"
-              onClick={async () => {
-                // Export for ALL known days (cortisol + sleep dates)
-                // If you only want Fitbit days, use sleepDays.map(d => d.date)
-                const csv = await buildAllDaysCsv({
-                  dates: [...availableDates].slice().reverse(), // oldest -> newest (remove reverse if you want newest first)
-                  sleepDays,
-                })
-                downloadTextFile(`cortisol_fitbit_ALL_DAYS_5min.csv`, csv)
-              }}
-            >
-              Export ALL days CSV
-            </Button>
-          </div>
-        )}
+          <Button
+            variant="outline"
+            onClick={async () => {
+              const dates = availableDates.slice().sort((a, b) => a.localeCompare(b))
+
+              console.log("[ALL CSV] exporting dates:", dates.length, dates)
+
+              const csv = await buildAllDaysCsv({ dates, sleepDays })
+
+              console.log("[ALL CSV] csv length:", csv.length)
+
+              downloadTextFile("cortisol_fitbit_ALL_DAYS_5min.csv", csv)
+            }}
+            disabled={availableDates.length === 0}
+          >
+            Export ALL days CSV
+          </Button>
+        </div>
         {intradayLoading ? (
           <p className="mt-2 text-sm text-muted-foreground">Loading intraday data…</p>
         ) : intradayError ? (
