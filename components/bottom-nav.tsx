@@ -2,7 +2,7 @@
 
 import { Home, TrendingUp, CalendarDays, MessageCircle, User } from "lucide-react"
 
-export type TabId = "home" | "trends" | "calendar" | "advisor" | "profile"
+export type TabId = "home" | "trends" | "advisor" | "profile"
 
 interface BottomNavProps {
   activeTab: TabId
@@ -12,7 +12,6 @@ interface BottomNavProps {
 const tabs: { id: TabId; label: string; icon: typeof Home }[] = [
   { id: "home", label: "Home", icon: Home },
   { id: "trends", label: "Trends", icon: TrendingUp },
-  { id: "calendar", label: "Calendar", icon: CalendarDays },
   { id: "advisor", label: "Advisor", icon: MessageCircle },
   { id: "profile", label: "Profile", icon: User },
 ]

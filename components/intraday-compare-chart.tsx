@@ -13,6 +13,28 @@ import {
 } from "recharts"
 import { type CortisolReading } from "@/lib/cortisol-data"
 
+function median(nums: number[]) {
+    if (nums.length === 0) return 0
+    const sorted = [...nums].sort((a, b) => a - b)
+    const mid = Math.floor(sorted.length / 2)
+    return sorted.length % 2
+        ? sorted[mid]
+        : (sorted[mid - 1] + sorted[mid]) / 2
+}
+
+function estimateBaselineRestingHR(hrValues: number[]) {
+    if (hrValues.length === 0) return 60
+
+    // sort lowest → highest
+    const sorted = [...hrValues].sort((a, b) => a - b)
+
+    // take lowest 20% (approx resting periods)
+    const count = Math.max(5, Math.floor(sorted.length * 0.2))
+    const lowest = sorted.slice(0, count)
+
+    return median(lowest)
+}
+
 type IntradayPoint = { time: string; value: number }
 
 interface Props {
@@ -39,7 +61,7 @@ export function IntradayCompareChart({
 }: Props) {
     const { data, cortisolCount } = useMemo(() => {
         // full 24h timeline
-        const rows: { time: string; hr?: number; steps?: number; cortisol?: number }[] = []
+        const rows: { time: string; hrPct?: number; steps?: number; cortisol?: number }[] = []
         for (let h = 0; h < 24; h++) {
             for (let m = 0; m < 60; m++) {
                 const hh = String(h).padStart(2, "0")
@@ -51,11 +73,16 @@ export function IntradayCompareChart({
         const index = new Map<string, number>()
         rows.forEach((r, i) => index.set(r.time, i))
 
-        // HR
+        // HR % above baseline
+        const hrValues = heartRate.map((p) => p.value).filter((v) => Number.isFinite(v))
+        const baselineHR = estimateBaselineRestingHR(hrValues)
+
         for (const p of heartRate) {
             const key = p.time.slice(0, 5)
             const i = index.get(key)
-            if (i !== undefined) rows[i].hr = p.value
+            if (i !== undefined) {
+                rows[i].hrPct = baselineHR ? ((p.value / baselineHR) - 1) * 100 : 0
+            }
         }
 
         // Steps
@@ -83,7 +110,7 @@ export function IntradayCompareChart({
     }, [heartRate, steps, readings, selectedDate])
 
     const hasAny =
-        data.some((d) => d.hr !== undefined) ||
+        data.some((d) => d.hrPct !== undefined) ||
         data.some((d) => d.steps !== undefined) ||
         data.some((d) => d.cortisol !== undefined)
 
@@ -114,13 +141,17 @@ export function IntradayCompareChart({
                         />
 
                         {/* Left axis: HR + Cortisol */}
-                        <YAxis yAxisId="left" />
+                        <YAxis
+                            yAxisId="left"
+                            domain={[-20, 120]}
+                            tickFormatter={(v) => `${Math.round(v)}%`}
+                        />
                         {/* Right axis: Steps */}
                         <YAxis yAxisId="right" orientation="right" />
 
                         <Tooltip
                             formatter={(value: any, name: any) => {
-                                if (name === "Heart Rate") return [`${value} bpm`, name]
+                                if (name === "HR vs Resting (%)") return [`${Math.round(value)}%`, name]
                                 if (name === "Steps") return [`${value}`, name]
                                 if (name === "Cortisol") return [`${value}`, name]
                                 return [value, name]
@@ -129,7 +160,13 @@ export function IntradayCompareChart({
                         />
                         <Legend />
 
-                        <Line yAxisId="left" type="monotone" dataKey="hr" name="Heart Rate" dot={false} />
+                        <Line
+                            yAxisId="left"
+                            type="monotone"
+                            dataKey="hrPct"
+                            name="HR vs Resting (%)"
+                            dot={false}
+                        />
                         <Line yAxisId="right" type="monotone" dataKey="steps" name="Steps" dot={false} />
 
                         {/* ✅ Cortisol as a LINE with dots; connectNulls links the sparse points */}

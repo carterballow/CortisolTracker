@@ -1,23 +1,165 @@
 "use client"
 
-import { useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Activity, Calendar, Target, TrendingDown } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
-import {
-  type CortisolReading,
-  getCortisolStatus,
-} from "@/lib/cortisol-data"
+import { type CortisolReading, getCortisolStatus } from "@/lib/cortisol-data"
+
+const STORAGE_KEY = "fitbit-api-key"
+const NAME_KEY = "profile-name"
+
+const NAMES = [
+  "Colin Ballow",
+  "Noah Brewer",
+  "Chase Ruderman",
+  "Carter Chouhan",
+  "Arnoop Ballow",
+  "Caleb Barlow",
+  "Spencer Cardella",
+  "Domenic Smith",
+  "Jack Keran",
+  "Cooper Redfern",
+  "Darius Tkachuk",
+  "Michael Vlad",
+  "Kai Gon",
+  "Christian Olsen",
+  "Bryce Davis",
+  "Adam Mohague",
+  "Alex Schoener",
+  "Nikola Embiid",
+  "Joel Jokic",
+  "Finley Gilmer",
+  "Elfaba Wick",
+  "Sean Raymond",
+  "Daniel Venny",
+  "Alex Harris",
+  "Donald Glover",
+  "Elliot Ezekiel",
+  "Dylan Harper",
+  "Sydney Swanson",
+  "James Harden",
+  "Jeff Milan",
+]
+
+function FitbitConnectionCard() {
+  const [savedKey, setSavedKey] = useState("")
+  const [input, setInput] = useState("")
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    const existing = localStorage.getItem(STORAGE_KEY) || ""
+    setSavedKey(existing)
+    setLoaded(true)
+  }, [])
+
+  function pickRandomName() {
+    const idx = Math.floor(Math.random() * NAMES.length)
+    return NAMES[idx]
+  }
+
+  function saveKey() {
+    const trimmed = input.trim()
+    if (!trimmed) return
+
+    localStorage.setItem(STORAGE_KEY, trimmed)
+    setSavedKey(trimmed)
+    setInput("")
+
+    // Generate a name ONCE (silently) if none exists yet
+    const existingName = localStorage.getItem(NAME_KEY)
+    if (!existingName) {
+      const newName = pickRandomName()
+      localStorage.setItem(NAME_KEY, newName)
+    }
+
+    // Tell the profile header to update immediately
+    window.dispatchEvent(new Event("profile-name-updated"))
+  }
+
+  function disconnect() {
+    localStorage.removeItem(STORAGE_KEY)
+    localStorage.removeItem(NAME_KEY)
+    setSavedKey("")
+    setInput("")
+
+    // Tell the profile header to reset immediately
+    window.dispatchEvent(new Event("profile-name-updated"))
+  }
+
+  if (!loaded) return null
+
+  return (
+    <div className="border rounded-2xl p-4">
+      <h2 className="text-lg font-semibold">Fitbit Integration</h2>
+      <p className="text-sm opacity-70 mt-1">
+        Connect your Fitbit to enable intraday overlay with cortisol readings.
+      </p>
+
+      {savedKey ? (
+        <div className="mt-3 space-y-3">
+          <div className="text-sm">
+            Status: <span className="font-medium text-green-600">Connected</span>
+          </div>
+
+          <button
+            onClick={disconnect}
+            className="px-3 py-2 rounded-xl border text-sm"
+          >
+            Disconnect Fitbit
+          </button>
+
+          <p className="text-xs opacity-60">Stored locally in this browser.</p>
+        </div>
+      ) : (
+        <div className="mt-3">
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Paste Fitbit access token"
+            className="w-full px-3 py-2 border rounded-xl text-sm"
+          />
+
+          <button
+            onClick={saveKey}
+            className="mt-3 w-full px-3 py-2 rounded-xl bg-black text-white text-sm"
+          >
+            Save Fitbit Token
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
 
 interface ProfileTabProps {
   readings: CortisolReading[]
 }
 
 export function ProfileTab({ readings }: ProfileTabProps) {
+  const [displayName, setDisplayName] = useState("Cortisol Tracker User")
+
+  useEffect(() => {
+    const loadName = () => {
+      const name = localStorage.getItem(NAME_KEY)
+      setDisplayName(name && name.trim().length > 0 ? name : "Cortisol Tracker User")
+    }
+
+    loadName()
+    window.addEventListener("profile-name-updated", loadName)
+    return () => window.removeEventListener("profile-name-updated", loadName)
+  }, [])
+
   const stats = useMemo(() => {
     if (readings.length === 0)
-      return { totalReadings: 0, daysTracked: 0, overallAvg: 0, inRangePercent: 0, streak: 0 }
+      return {
+        totalReadings: 0,
+        daysTracked: 0,
+        overallAvg: 0,
+        inRangePercent: 0,
+        streak: 0,
+      }
 
     const uniqueDays = new Set(readings.map((r) => r.date))
     const overallAvg =
@@ -81,17 +223,22 @@ export function ProfileTab({ readings }: ProfileTabProps) {
         <p className="text-sm text-muted-foreground">Your cortisol tracking summary</p>
       </div>
 
+      <FitbitConnectionCard />
+
       <Card>
         <CardContent className="flex flex-col items-center gap-3 pt-6 pb-5">
           <Avatar className="size-16">
             <AvatarFallback className="bg-primary/10 text-primary text-xl font-bold">
-              U
+              {displayName?.[0]?.toUpperCase() ?? "U"}
             </AvatarFallback>
           </Avatar>
           <div className="text-center">
-            <h3 className="text-base font-semibold">Cortisol Tracker User</h3>
+            <h3 className="text-base font-semibold">{displayName}</h3>
             <p className="text-xs text-muted-foreground">
-              Tracking since {stats.daysTracked > 0 ? `${stats.daysTracked} day${stats.daysTracked > 1 ? "s" : ""}` : "today"}
+              Tracking since{" "}
+              {stats.daysTracked > 0
+                ? `${stats.daysTracked} day${stats.daysTracked > 1 ? "s" : ""}`
+                : "today"}
             </p>
           </div>
           {stats.streak > 0 && (
@@ -123,15 +270,19 @@ export function ProfileTab({ readings }: ProfileTabProps) {
         <CardContent className="flex flex-col gap-3">
           <div className="flex flex-col gap-2 text-sm text-muted-foreground">
             <p>
-              Track your cortisol levels throughout the day to understand your stress patterns and optimize your health.
+              Track your cortisol levels throughout the day to understand your stress
+              patterns and optimize your health.
             </p>
             <Separator />
             <p className="text-xs leading-relaxed">
-              Cortisol follows a natural diurnal rhythm, peaking in the morning and declining through the evening. Monitoring this pattern can help identify chronic stress, sleep issues, or adrenal dysfunction.
+              Cortisol follows a natural diurnal rhythm, peaking in the morning and
+              declining through the evening. Monitoring this pattern can help identify
+              chronic stress, sleep issues, or adrenal dysfunction.
             </p>
             <Separator />
             <p className="text-[10px]">
-              This tool is for informational purposes only. Consult your healthcare provider for interpretation of cortisol levels.
+              This tool is for informational purposes only. Consult your healthcare
+              provider for interpretation of cortisol levels.
             </p>
           </div>
         </CardContent>
