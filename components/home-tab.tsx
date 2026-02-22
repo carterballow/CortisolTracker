@@ -1,13 +1,12 @@
 "use client"
 
 import { StatsOverview } from "@/components/stats-overview"
-import { LogEntryForm } from "@/components/log-entry-form"
 import { HealthyRangesInfo } from "@/components/healthy-ranges-info"
 import { type CortisolReading } from "@/lib/cortisol-data"
 
 interface HomeTabProps {
-  readings: CortisolReading[]
-  onAddReading: (reading: CortisolReading) => void
+  readings: CortisolReading[] // unused for now, but keep to avoid refactor
+  onAddReading: (reading: CortisolReading) => void // unused for now, but keep
 }
 
 export function HomeTab({ readings, onAddReading }: HomeTabProps) {
@@ -18,12 +17,11 @@ export function HomeTab({ readings, onAddReading }: HomeTabProps) {
           Good {getGreeting()}
         </h2>
         <p className="text-sm text-muted-foreground">
-          Track your cortisol levels and stay on top of your health.
+          Fitbit-based cortisol estimates and daily comparisons.
         </p>
       </div>
 
-      <StatsOverview readings={readings} />
-      <LogEntryForm onSubmit={onAddReading} />
+      <StatsOverview />
       <HealthyRangesInfo />
     </div>
   )

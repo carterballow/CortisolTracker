@@ -19,7 +19,6 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Cortisol Tracker - Monitor Your Stress Levels',
   description: 'Track and visualize your cortisol levels throughout the day. Understand your stress patterns and optimize your health.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/cortisol-tracker-logo.svg',
         type: 'image/svg+xml',
       },
     ],
