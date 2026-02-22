@@ -1,18 +1,59 @@
-Cortisol
-⚠️ Important Note About the Demo Video
+# 🚀 **CORTISOL**
 
-The video currently included in the depot/repository is not representative of the full scope of work that went into this project.
+---
 
-Due to time constraints and recording limitations, the demo does not fully showcase:
+# ⚠️ **IMPORTANT NOTE ABOUT THE DEMO VIDEO**
 
-The architectural design and planning behind the system
+The demo video included in this repository is **not fully representative of the scope, depth, and engineering effort** that went into this project.
 
-The depth of the implementation
+The recording was created as a brief submission artifact and does not showcase:
 
-The debugging, iteration, and refinement process
+- Architectural design decisions
+- Internal system logic
+- State management complexity
+- Debugging and optimization work
+- Iterative refactoring and structural improvements
+- Edge-case handling
 
-The underlying technical complexity
+The visible output in the video reflects only a surface-level demonstration of the project’s capabilities.
 
-The performance considerations and structural decisions
+---
 
-The visible output in the video reflects only a small surface-level portion of the overall effort.
+## 🧠 Project Overview
+
+Cortisol is a system designed with an emphasis on:
+
+- Modular architecture  
+- Scalable structure  
+- Clean separation of concerns  
+- Iterative engineering refinement  
+- Performance-aware implementation  
+
+A significant portion of the effort focused on infrastructure, system design, and internal logic rather than visual presentation alone.
+
+---
+
+## 🏗️ Technical Highlights
+
+- Structured component hierarchy  
+- Organized state flow  
+- Clear abstraction boundaries  
+- Incremental development via version control  
+- Emphasis on maintainability and extensibility  
+
+---
+
+## 📸 Project Screenshots
+
+### Core Interface
+![Core Interface](images/interface.png)
+
+### System Architecture
+![Architecture Diagram](images/architecture.png)
+
+### Feature Demonstration
+![Feature Demo](images/feature.png)
+
+---
+
+## 📂 Repository Structure
