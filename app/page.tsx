@@ -23,9 +23,10 @@ export default function CortisolTracker() {
     }
   })
 
-useEffect(() => {
-  localStorage.setItem("cortisol-readings", JSON.stringify(readings))
-}, [readings])
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    localStorage.setItem("cortisol-readings", JSON.stringify(readings))
+  }, [readings])
 
   const handleAddReading = (reading: CortisolReading) => {
     setReadings((prev) => [...prev, reading])

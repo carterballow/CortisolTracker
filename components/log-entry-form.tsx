@@ -25,22 +25,28 @@ export function LogEntryForm({ onSubmit }: LogEntryFormProps) {
   const [timeOfDay, setTimeOfDay] = useState<CortisolReading["timeOfDay"]>("morning")
   const [notes, setNotes] = useState("")
 
+  // ✅ NEW: allow choosing the date (defaults to today)
+  const [date, setDate] = useState(() => new Date().toISOString().slice(0, 10))
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const numValue = parseFloat(value)
-    if (isNaN(numValue) || numValue <= 0) return
+
+    const numValue = Number.parseFloat(value)
+    if (!Number.isFinite(numValue) || numValue <= 0) return
+    if (!date) return
 
     const reading: CortisolReading = {
       id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
       value: numValue,
       timeOfDay,
-      date: new Date().toISOString().split("T")[0],
+      date, // ✅ USE SELECTED DATE, not always "today"
       notes,
     }
 
     onSubmit(reading)
     setValue("")
     setNotes("")
+    // keep date as-is (so user can log multiple entries for same day)
   }
 
   const range = HEALTHY_RANGES[timeOfDay]
@@ -52,13 +58,24 @@ export function LogEntryForm({ onSubmit }: LogEntryFormProps) {
           <Plus className="size-5 text-primary" />
           Log Cortisol Reading
         </CardTitle>
-        <CardDescription>
-          Enter your cortisol level from a saliva or blood test
-        </CardDescription>
+        <CardDescription>Enter your cortisol level from a saliva or blood test</CardDescription>
       </CardHeader>
+
       <CardContent>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {/* ✅ NEW: Date picker */}
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="cortisol-date">Date</Label>
+              <Input
+                id="cortisol-date"
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                required
+              />
+            </div>
+
             <div className="flex flex-col gap-2">
               <Label htmlFor="cortisol-value">Cortisol Level (mcg/dL)</Label>
               <Input
@@ -76,9 +93,13 @@ export function LogEntryForm({ onSubmit }: LogEntryFormProps) {
                 Healthy range: {range.min}-{range.max} mcg/dL
               </p>
             </div>
+
             <div className="flex flex-col gap-2">
               <Label htmlFor="time-of-day">Time of Day</Label>
-              <Select value={timeOfDay} onValueChange={(v) => setTimeOfDay(v as CortisolReading["timeOfDay"])}>
+              <Select
+                value={timeOfDay}
+                onValueChange={(v) => setTimeOfDay(v as CortisolReading["timeOfDay"])}
+              >
                 <SelectTrigger id="time-of-day" className="w-full">
                   <SelectValue />
                 </SelectTrigger>
@@ -92,6 +113,7 @@ export function LogEntryForm({ onSubmit }: LogEntryFormProps) {
               </Select>
             </div>
           </div>
+
           <div className="flex flex-col gap-2">
             <Label htmlFor="notes">Notes (optional)</Label>
             <Textarea
@@ -103,6 +125,7 @@ export function LogEntryForm({ onSubmit }: LogEntryFormProps) {
               rows={2}
             />
           </div>
+
           <Button type="submit" className="w-full sm:w-auto sm:self-end">
             Log Reading
           </Button>

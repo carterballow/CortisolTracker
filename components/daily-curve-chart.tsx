@@ -22,6 +22,7 @@ interface DailyCurveChartProps {
 const TIME_ORDER = ["morning", "midday", "afternoon", "evening", "night"]
 
 export function DailyCurveChart({ readings, selectedDate }: DailyCurveChartProps) {
+  console.log("CHART selectedDate =", selectedDate, typeof selectedDate)
   const dayReadings = readings.filter((r) => r.date === selectedDate)
 
   const chartData = TIME_ORDER.map((time) => {
@@ -35,11 +36,14 @@ export function DailyCurveChart({ readings, selectedDate }: DailyCurveChartProps
     }
   })
 
-  const displayDate = new Date(selectedDate + "T12:00:00").toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-  })
+  const displayDate = selectedDate
+    ? new Date(`${selectedDate}T12:00:00`).toLocaleDateString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+    })
+    
+    : "—"
 
   return (
     <Card>
