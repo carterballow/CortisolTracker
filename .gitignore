@@ -9,11 +9,10 @@ out/
 
 # deps
 node_modules/
-.data/
+data/
 # local temp
 .tmp/
 
-.data/
 # env (never commit)
 .env
 EOF
