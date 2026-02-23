@@ -32,27 +32,11 @@ Cortisol is a system designed with an emphasis on:
 A significant portion of the effort focused on infrastructure, system design, and internal logic rather than visual presentation alone.
 
 ---
+### Features Video
 
-## 🏗️ Technical Highlights
+![Runthru](public/videoforcort.mp4)
 
-- Structured component hierarchy  
-- Organized state flow  
-- Clear abstraction boundaries  
-- Incremental development via version control  
-- Emphasis on maintainability and extensibility  
 
----
-
-## 📸 Project Screenshots
-
-### Core Interface
-![Fully Trained AI Model](images/interface.png)
-
-### System Architecture
-![Architecture Diagram](images/architecture.png)
-
-### Feature Demonstration
-![Feature Demo](images/feature.png)
 
 ---
 
